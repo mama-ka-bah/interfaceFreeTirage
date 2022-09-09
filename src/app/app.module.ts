@@ -7,6 +7,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { TirageComponent } from './tirage/tirage.component';
 import { DetailsListeComponent } from './details-liste/details-liste.component';
 import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
+import { TirageInterfaceComponent } from './tirage-interface/tirage-interface.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
     AccueilComponent,
     TirageComponent,
     DetailsListeComponent,
-    DetailTirageComponent
+    DetailTirageComponent,
+    TirageInterfaceComponent
   ],
   imports: [
     BrowserModule,
