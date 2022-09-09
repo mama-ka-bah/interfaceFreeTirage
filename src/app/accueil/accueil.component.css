@@ -1,0 +1,114 @@
+.statistiques{
+    display: flex;
+    justify-content: space-around;
+    /*margin-top: -30px;*/
+    margin-bottom: 30px;
+}
+
+.statistique_liste_tire, .statistique_tirage{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 319px;
+    height: 301px;
+    border: 30px solid #5AB05D;
+    border-radius: 100%;
+    margin-top: 50px;
+    align-items: center;
+}
+.tableau{
+    table-layout: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.details{
+    width: 10px;
+}
+
+.tableau td, .tableau tr{
+    border-color: #5AB05D;
+}
+.texte_accueil{
+   text-align: center;
+    margin-right: auto;
+    margin-top: 35px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.libelle_total_liste_tire, .total_liste_tire, .libelle_total_tirage, .total_tirage{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.total_liste_tire, .total_tirage{ 
+  margin-top: -100px
+}
+
+td i{
+    width: 200px;
+    height: 30px;
+    font-size: 30px;
+    color: #5AB05D;
+}
+
+@media screen and (max-width: 800px){
+    .statistiques{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .texte_accueil{
+        display: none;
+    }
+
+    .statistiques{
+       display: block;
+        position: absolute;
+        top: -8px;
+        right: 0;
+    }
+
+    .tableau{
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        background-color: white; 
+        height : 1px;
+        margin: 0;
+    }
+    table{
+        background: #ffffff;
+    }
+
+    .statistique_liste_tire, .statistique_tirage{
+        width: 90%;
+        height: 210px;
+        border: 1px solid #5AB05D;
+        border-radius: 0;
+        margin-top: 25%;
+        text-align: center;
+    }
+    
+
+}
+
+
+/*
+.libelle_total_liste_tire, .libelle_total_tirage{
+    
+}
+
+.content_statistique_liste_tire, .content_statistique_tirage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+*/
+

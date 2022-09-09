@@ -1,3 +1,7 @@
+.header{
+    background-color: #FFF;
+}
+
 .logo{
     height: 55px;
     margin-right: 15%;
@@ -23,6 +27,7 @@ nav{
     width: 100%;
     text-align: center;
     justify-content: space-between;
+    background-color: #FFF;
 }
 
 .menu{
@@ -32,8 +37,15 @@ nav{
    align-items: center;
    justify-content: flex-end;
    padding: 0;
+   margin-top: auto;
+   margin-bottom: auto;
 }
 
+.menu li a{
+    text-decoration: none;
+    color: black;
+
+}
 
 .accueil{
     margin-right: 60%;
@@ -44,7 +56,66 @@ footer{
     position:fixed;
     bottom: 0px;
     background-color: #59B05D;
-    font-size: 10px;
     color: white;
     text-align: center;
+}
+
+.content_footer{
+    width: 80%;
+    margin: auto;
+    padding-top: 16px;
+    font-size: 20px;
+}
+
+
+
+
+
+@media screen and (max-width: 450px)
+{
+    /* Rédigez vos propriétés CSS ici  */
+    
+    .menu{         
+       display: block;
+       padding: auto;
+       margin: auto;
+    }
+    .logo{
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+    }
+    .company{
+        
+        flex-direction: column;
+    }
+    .name_company{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    nav{
+        flex-direction: column;
+        /*justify-content: space-between;*/
+        width: 150px;
+        /*height: 100vh;*/
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+    }
+
+    .content_footer{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .accueil{
+        margin-bottom: 50px;
+    }
+
+    footer{
+        font-size: 6px;
+    }
 }

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
+import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
 import { DetailsListeComponent } from './details-liste/details-liste.component';
+import { TirageComponent } from './tirage/tirage.component';
 
 const routes: Routes = [
 
@@ -10,9 +12,11 @@ const routes: Routes = [
     redirectTo:"/accueil",
     pathMatch:"full"
   },
-  { path:'accueil',component:AccueilComponent }, 
-  { path:'detailsl',component:DetailsListeComponent }, 
 
+  { path:'accueil',component:AccueilComponent }, 
+  { path:'detailsliste',component:DetailsListeComponent }, 
+  { path:'tirage',component:TirageComponent }, 
+  { path:'detailtirage',component:DetailTirageComponent }, 
 
 ];
 

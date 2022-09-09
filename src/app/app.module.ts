@@ -8,6 +8,14 @@ import { TirageComponent } from './tirage/tirage.component';
 import { DetailsListeComponent } from './details-liste/details-liste.component';
 import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';  
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +26,16 @@ import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(library: FaIconLibrary) {
+    library.addIcons(fasStar, farStar);
+  }
+
+ }
