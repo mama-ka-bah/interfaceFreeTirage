@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tirage.component.html',
   styleUrls: ['./tirage.component.css']
 })
-export class TirageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class TirageComponent{
 
 }

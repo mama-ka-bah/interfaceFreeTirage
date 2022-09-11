@@ -1,0 +1,72 @@
+.content_detail_liste{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.tableau{
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+.content_detail_liste div p{
+    font-size: 25px;
+}
+
+
+.tableau td, .tableau tr{
+    border-color: #5AB05D;
+}
+
+td i{
+    width: 50px;
+    height: 30px;
+    font-size: 30px;
+    color: #5AB05D;
+}
+
+@media screen and (max-width: 700px){
+    .email{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .content_detail_liste{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 70px;
+       
+    }
+
+    .libelle{
+        margin-bottom: 80px;
+        font-size: 18px;
+        margin-right: -150px;
+    }
+
+    
+    .tableau{
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        height : 1px;
+        margin: 0;
+    }
+
+    .tableau table{
+        background-color: white;
+    }
+
+    .num, .email{
+        display: none;
+    }
+
+}
+
