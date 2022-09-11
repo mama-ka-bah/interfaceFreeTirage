@@ -7,7 +7,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { TirageComponent } from './tirage/tirage.component';
 import { DetailsListeComponent } from './details-liste/details-liste.component';
 import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
-import { TirageInterfaceComponent } from './tirage-interface/tirage-interface.component';
+/*import { TirageInterfaceComponent } from './tirage-interface/tirage-interface.component';*/
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -24,7 +24,6 @@ import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
     TirageComponent,
     DetailsListeComponent,
     DetailTirageComponent,
-    TirageInterfaceComponent
   ],
   imports: [
     BrowserModule,
