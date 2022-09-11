@@ -81,7 +81,8 @@ input[type=file]::file-selector-button{
     border: 1px solid #5AB05D;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 100vw;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .listet p{
     text-align: center;

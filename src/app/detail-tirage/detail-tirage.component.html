@@ -16,30 +16,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let postulantTires of listePostulanttirage">
             <th scope="row" class="num">1</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
-            <td>Mahamadou</td>
-            <td>82644606</td>
-            <td class="email" >kmahamadou858@gmail.com</td>
+            <td routerLink="/detailtirage" routerLinkActive="active" >{{postulantTires.nompostulant}}</td>
+            <td>{{postulantTires.prenompostulant}}</td>
+            <td>{{postulantTires.numeropostulant}}</td>
+            <td class="email" >{{postulantTires.email}}</td>
           </tr>
+          <!--
+              <tr>
+              <th scope="row" class="num">1</th>
+              <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
+              <td>Mahamadou</td>
+              <td>82644606</td>
+              <td class="email" >kmahamadou858@gmail.com</td>
+            </tr>
 
-          <tr>
-            <th scope="row" class="num">1</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
-            <td>Mahamadou</td>
-            <td>82644606</td>
-            <td class="email" >kmahamadou858@gmail.com</td>
-          </tr>
-
-          <tr>
-            <th scope="row" class="num">1</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
-            <td>Mahamadou</td>
-            <td>82644606</td>
-            <td class="email" >kmahamadou858@gmail.com</td>
-          </tr>
-
+            <tr>
+              <th scope="row" class="num">1</th>
+              <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
+              <td>Mahamadou</td>
+              <td>82644606</td>
+              <td class="email" >kmahamadou858@gmail.com</td>
+            </tr>
+          -->
           
         </tbody>
       </table>
