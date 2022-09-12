@@ -4,3 +4,4 @@ export class DetailTirage {
     email!: string;
     numero!: number;
 }
+            

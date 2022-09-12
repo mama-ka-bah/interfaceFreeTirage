@@ -18,7 +18,7 @@ export class DetailTirageService {
 
   getListePostulanttirageByNomTirage(nomTirageid: number) : Observable<object>{
 
-    return this.http.get<object>(`http://localhost:8080/PostulantTrie/recupererPostulantTireid/${nomTirageid}`);
+    return this.http.get<object>(`http://localhost:8080/PostulantTrie/recupererPostulantid/${nomTirageid}`);
 
   }
 
