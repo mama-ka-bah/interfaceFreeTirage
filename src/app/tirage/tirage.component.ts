@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DetailTirageService } from '../detail-tirage.service';
+
 
 @Component({
   selector: 'app-tirage',
   templateUrl: './tirage.component.html',
   styleUrls: ['./tirage.component.css']
 })
-export class TirageComponent{
+export class TirageComponent implements OnInit{
 /*
   show: boolean = true;
 
@@ -14,6 +17,15 @@ export class TirageComponent{
     this.show = !this.show;
   }
   */
+
+  
+
+  constructor() { }
+
+ngOnInit(): void {
+
+
+}
 
   tirage: boolean = true;
   import: boolean = false;

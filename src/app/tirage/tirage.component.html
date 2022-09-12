@@ -9,22 +9,22 @@
     <div *ngIf="tirage" class="ImportTirage">
       <div class="FormTrie1">Effetuer un tirage</div>
       <div class="form-saisie2">
-          <form method="" action="">
+          <form method="" action=""> <!--  #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)" -->
   
               <div>
                   <label for="liste">Libelle Liste </label>
-                  <input type="text" name="liste" placeholder="" id="liste"/>
+                  <input type="text" ngModel name="liste" placeholder="" id="liste"/>
               </div>
   
               <div><!-- *ngIf="show"-->
                   <label for="nombre">Nombre de personne trier </label>
-                  <input type="number" name="nombre" placeholder="" id="nombre" />
+                  <input type="number" ngModel name="nombre" placeholder="" id="nombre" />
               </div>
   
   
               <div><!-- *ngIf="show"-->
                   <label for="tirage">Libelle Tirage </label>
-                  <input type="text" name="tirage" placeholder="" id="tirage"/>
+                  <input type="text" ngModel name="tirage" placeholder="" id="tirage"/>
           
               </div>
               <div>

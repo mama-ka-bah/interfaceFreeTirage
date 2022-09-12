@@ -8,9 +8,30 @@ import { Observable } from 'rxjs';
 export class DetailTirageService {
 
   constructor(private http:HttpClient) { }
+
   getListePostulanttirage() : Observable<object>{
 
-    return this.http.get("http://localhost:8080/PostulantTrie/recupererPostulant/tirage1_liste1");
+    return this.http.get<object>("http://localhost:8080/PostulantTrie/recupererPostulant/tirage1_liste1");
 
   }
+
+
+  getListePostulanttirageByNomTirage(nomTirageid: number) : Observable<object>{
+
+    return this.http.get<object>(`http://localhost:8080/PostulantTrie/recupererPostulantTireid/${nomTirageid}`);
+
+  }
+
+  getAllTirages() : Observable<object>{
+    return this.http.get<object>("http://localhost:8080/tirage/recupererTirages");
+  }
+
+  
+
+  /*
+  saveUser(data:any){
+    return this.http.post("http://localhost:8080/tirage//createTirage/liste1/1", data);
+  }
+*/
+
 }

@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 export class DetailTirageService {
 
   constructor(private http:HttpClient) { }
+  
   getListePostulanttirage() : Observable<object>{
 
     return this.http.get("http://localhost:8080/PostulantTrie/recupererPostulant/tirage1_liste1");
 
   }
+
 }

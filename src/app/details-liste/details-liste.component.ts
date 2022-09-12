@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { DetailTirageService } from '../detail-tirage.service';
 
 @Component({
   selector: 'app-details-liste',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsListeComponent implements OnInit {
 
-  constructor() { }
+
+  tirages$!: Observable<any>;
+
+  
+
+  constructor(private service : DetailTirageService,
+    
+    private route: ActivatedRoute
+
+
+    ) { }
 
   ngOnInit(): void {
+
+    this.tirages$ = this.service.getAllTirages();
   }
 
 }

@@ -16,23 +16,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!--
+               <tr>
             <th scope="row">1</th>
             <td routerLink="/detailtirage" routerLinkActive="active" >Libellé tirage</td>
             <td>12/02/2022</td>
             <td>20</td>
             <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
           </tr>
+          -->
 
-          <tr>
+          <tr *ngFor="let tirage of tirages$ | async; index as i">
             <th scope="row">2</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >Libellé tirage</td>
-            <td>12/02/2022</td>
+            <td routerLink="/detailtirage" routerLinkActive="active" >{{i+1}}.{{tirage.libellet}}</td>
+            <td>{{i+1}}.{{tirage.date}}</td>
             <td>20</td>
             <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
           </tr>
 
-          <tr>
+
+           <!--
+          <tr>           
             <th scope="row">3</th>
             <td routerLink="/detailtirage" routerLinkActive="active" >Libellé tirage</td>
             <td>12/02/2022</td>
@@ -46,6 +50,7 @@
             <td>20</td>
             <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
           </tr>
+        -->
          
         </tbody>
       </table>
