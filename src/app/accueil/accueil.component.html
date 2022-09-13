@@ -26,12 +26,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td routerLink="/detailsliste" routerLinkActive="active" >Libellé liste kalanso P1</td>
+          <tr *ngFor="let liste of listes$ | async; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td [routerLink]="['/detailsliste', liste.id_liste]" routerLinkActive="active" >{{liste.libelle}}</td>
             <td>20</td>
             <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
           </tr>
+
+    <!--
           <tr>
             <th scope="row">2</th>
             <td routerLink="/detailsliste" routerLinkActive="active">Libellé liste kalanso P2</td>
@@ -56,6 +58,7 @@
             <td>100</td>
             <td class="details" routerLink="/detailsliste" routerLinkActive="active"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
           </tr>
+    -->
         </tbody>
       </table>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { DetailTirageService } from '../detail-tirage.service';
+import { DetailListeService } from '../services/detail-liste.service';
+
 
 @Component({
   selector: 'app-details-liste',
@@ -11,20 +12,25 @@ import { DetailTirageService } from '../detail-tirage.service';
 export class DetailsListeComponent implements OnInit {
 
 
-  tirages$!: Observable<any>;
+  //tirages$!: Observable<any>;
+
+  detailslistes$!: Observable<any>;
 
   
 
-  constructor(private service : DetailTirageService,
+  constructor(private service : DetailListeService,
     
     private route: ActivatedRoute
 
 
     ) { }
+    
 
   ngOnInit(): void {
 
-    this.tirages$ = this.service.getAllTirages();
+    const id_liste = +this.route.snapshot.params["id_liste"];
+
+   this.detailslistes$ = this.service.getDetailesListe(id_liste);
   }
 
 }

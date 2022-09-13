@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { AccueilService } from '../services/accueil.service';
 
 
 
@@ -10,11 +12,17 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class AccueilComponent implements OnInit{
 
+  listes$! : Observable<any>;
+
+
   text_accueil!: string;
   libelle_liste!: string;
   total_liste_tire!: number;
   total_tirage!: number;
   nombre_tirage!: number;
+
+
+  constructor(private service : AccueilService) { }
 
   ngOnInit(): void {
 
@@ -23,6 +31,8 @@ export class AccueilComponent implements OnInit{
     this.total_liste_tire = 5;
     this.total_tirage = 10;
     this.nombre_tirage = 22;
+
+    this.listes$ = this.service.getAllListe();
 
   }
 
