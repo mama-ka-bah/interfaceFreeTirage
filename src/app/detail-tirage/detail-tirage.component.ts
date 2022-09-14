@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { DetailTirage } from '../detail-tirage';
-import { DetailTirageService } from '../detail-tirage.service';
+import { DetailTirageService } from '../services/detail-tirage.service';
 
 @Component({
   selector: 'app-detail-tirage',
@@ -11,9 +10,6 @@ import { DetailTirageService } from '../detail-tirage.service';
 })
 
 export class DetailTirageComponent implements OnInit {
-
-  listePostulanttirage: any
-
 
   detailTirage!: object;
 
@@ -30,16 +26,10 @@ export class DetailTirageComponent implements OnInit {
   
 
   ngOnInit(): void {
-    /*
-    this.service.getListePostulanttirage().subscribe(data=>{
-      this.listePostulanttirage=data;
-    });
-    */
-   this.detailTirage$ = this.service.getListePostulanttirage();
 
-   const nomTirageid = +this.route.snapshot.params["id"];
+   const tirageid = +this.route.snapshot.params["id"];
 
-   this.detailTirage$ = this.service.getListePostulanttirageByNomTirage(nomTirageid);
+   this.detailTirage$ = this.service.getListePostulanttirageByNomTirage(tirageid);
   }
 
   

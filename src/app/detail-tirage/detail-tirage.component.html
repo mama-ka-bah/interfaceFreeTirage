@@ -15,14 +15,14 @@
             <th scope="col" class="email">Email</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="detailTirage$ | async as index">
           <!-- *ngFor="let postulantTires of detailTirage$ | async; index as i" -->
-          <tr *ngIf="detailTirage$ | async as i"> <!--<tr *ngFor="let postulantTires of listePostulanttirage" >-->
-            <th scope="row" class="num">1</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >{{i.nompostulant}}</td>
-            <td>{{i.prenompostulant}}</td><!-- {{i+1}}.{{postulantTires.prenompostulant}} -->
-            <td>{{i}}</td>
-            <td class="email" >{{i.email}}</td>
+          <tr *ngFor="let tirage of detailTirage$ | async; index as i" > <!--<tr *ngFor="let postulantTires of listePostulanttirage" >-->
+            <th scope="row" class="num">{{i+1}}</th>
+            <td routerLink="/detailtirage" routerLinkActive="active" >{{i+1}}.{{tirage.nompostulant}}</td>
+            <td>{{tirage.prenompostulant}}</td><!-- {{i+1}}.{{postulantTires.prenompostulant}} -->
+            <td>{{tirage.numeropostulant}}</td>
+            <td class="email" >{{tirage.email}}</td>
           </tr>
           <!--
               <tr>

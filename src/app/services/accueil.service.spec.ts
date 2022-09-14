@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DetailTirageService } from './detail-tirage.service';
+import { AccueilService } from './accueil.service';
 
-describe('DetailTirageService', () => {
-  let service: DetailTirageService;
+describe('AccueilService', () => {
+  let service: AccueilService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DetailTirageService);
+    service = TestBed.inject(AccueilService);
   });
 
   it('should be created', () => {

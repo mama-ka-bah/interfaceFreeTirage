@@ -9,26 +9,26 @@
     <div *ngIf="tirage" class="ImportTirage">
       <div class="FormTrie1">Effetuer un tirage</div>
       <div class="form-saisie2">
-          <form method="" action=""> <!--  #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)" -->
+          <form > <!--  #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)" -->
   
               <div>
-                  <label for="liste">Libelle Liste </label>
-                  <input type="text" ngModel name="liste" placeholder="" id="liste"/>
+                  <label for="libelle_liste">Libelle Liste </label>
+                  <input type="text" [(ngModel)]="libelleListe" name="libelleListe" placeholder="" id="libelle_liste"/>
               </div>
   
               <div><!-- *ngIf="show"-->
-                  <label for="nombre">Nombre de personne trier </label>
-                  <input type="number" ngModel name="nombre" placeholder="" id="nombre" />
+                  <label for="nbre">Nombre de personne trier </label>
+                  <input type="number" [(ngModel)]="nbre" name="nbre" placeholder="" id="nbre" />
               </div>
   
   
               <div><!-- *ngIf="show"-->
-                  <label for="tirage">Libelle Tirage </label>
-                  <input type="text" ngModel name="tirage" placeholder="" id="tirage"/>
+                  <label for="libellet">Libelle Tirage </label>
+                  <input type="text" [(ngModel)]="libellet" name="libellet" placeholder="" id="libellet"/>
           
               </div>
               <div>
-                  <input type="submit" name="" value="Tirer" class="btntrier btn btn-primary" />
+                  <input type="submit" (click)="postTirage()" name="" value="Tirer" class="btntrier btn btn-primary" />
               </div>
           
   
@@ -40,20 +40,21 @@
   <div *ngIf="import" class="ImportTirage">
     <div class="FormTrie1">Importer un fichier</div>
     <div class="form-saisie2">
-        <form method="" action="">
+        <form [formGroup]="formmodule" (ngSubmit)="importerliste()">
 
             <div>
                 <label for="liste">Libelle Liste </label>
-                <input type="text" name="liste" placeholder="" id="liste"/>
+                <input type="text" name="libelle" formControlName="libelle"placeholder="" id="liste"/>
             </div>
 
             <div class="fichier"> <!--*ngIf="!show"-->
                 <label for="file">Fichier excel</label>
-                <input class="form-control" type="file" id="formFileDisabled" name="file"id="file">
+                <input class="form-control" type="file"  formControlName="file" id="formFileDisabled" name="file" id="file" (change)="fileChange($event)" >
             </div>
 
             <div>
-              <input type="submit" name="" value="Importer" class="btntrier btn btn-primary" />
+             <input type="submit" value="Importer" class="btntrier btn btn-primary" />
+              
           </div>
 
         </form>

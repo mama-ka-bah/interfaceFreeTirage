@@ -14,6 +14,9 @@
     font-size: 25px;
 }
 
+.lie:hover{
+     color: #5AB05D;
+}
 
 .tableau td, .tableau tr{
     border-color: #5AB05D;

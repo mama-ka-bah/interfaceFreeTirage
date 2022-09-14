@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,6 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { TirageComponent } from './tirage/tirage.component';
 import { DetailsListeComponent } from './details-liste/details-liste.component';
 import { DetailTirageComponent } from './detail-tirage/detail-tirage.component';
-/*import { TirageInterfaceComponent } from './tirage-interface/tirage-interface.component';*/
 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +31,10 @@ import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

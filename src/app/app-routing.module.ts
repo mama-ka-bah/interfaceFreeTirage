@@ -14,9 +14,9 @@ const routes: Routes = [
   },
 
   { path:'accueil',component:AccueilComponent }, 
-  { path:'detailsliste',component:DetailsListeComponent }, 
+  { path:'detailsliste/:id_liste',component:DetailsListeComponent }, 
   { path:'tirage',component:TirageComponent }, 
-  { path:'detailtirage',component:DetailTirageComponent }, 
+  { path:'detailtirage/:id',component:DetailTirageComponent }, 
 
 ];
 
