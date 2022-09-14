@@ -24,8 +24,8 @@ export class TirageService {
     return this.http.post<void>(`http://localhost:8080/postulant/import/excel/${libelle}`,data);
   }
   
-  getNombeTirage():Observable<any>{
-    return this.http.get<any>("localhost:8080/tirage/nombretirages");
+  getNombeTirage():Observable<object>{
+    return this.http.get(`http://localhost:8080/tirage/nombretirages`);
   }
 
 }
