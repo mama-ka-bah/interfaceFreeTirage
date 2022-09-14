@@ -14,4 +14,9 @@ export class AccueilService {
     return this.http.get("http://localhost:8080/Liste/listes");
 
   }
+
+  getNombreListeTirees():Observable<object>{
+    return this.http.get(`http://localhost:8080/Liste/listesNombreTirees`);
+  }
+
 }
