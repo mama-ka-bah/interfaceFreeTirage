@@ -33,7 +33,8 @@ import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
     
   ],
   providers: [],

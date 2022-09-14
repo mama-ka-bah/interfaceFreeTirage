@@ -17,6 +17,7 @@ export class AccueilComponent implements OnInit{
   listes$! : Observable<any>;
 
   nombreTirage: any;
+  nombreListeTiree: any;
 
 
   text_accueil!: string;
@@ -40,6 +41,11 @@ export class AccueilComponent implements OnInit{
 
     this.serviceTirage.getNombeTirage().subscribe(data=>{
       this.nombreTirage=data;
+      console.log(data)
+    })
+
+    this.service.getNombreListeTirees().subscribe(data=>{
+      this.nombreListeTiree=data;
       console.log(data)
     })
     
