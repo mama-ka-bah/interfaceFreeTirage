@@ -26,8 +26,6 @@ export class DetailTirageService {
     return this.http.get<object>("http://localhost:8080/tirage/recupererTirages");
   }
 
-  
-
   /*
   saveUser(data:any){
     return this.http.post("http://localhost:8080/tirage//createTirage/liste1/1", data);
