@@ -28,6 +28,9 @@
 th{
     font-size: 20px;
 }
+.lit:hover{
+    color: #5AB05D;
+}
 
 .tableau td, .tableau tr{
     border-color: #5AB05D;
