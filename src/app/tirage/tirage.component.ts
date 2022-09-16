@@ -31,8 +31,11 @@ export class TirageComponent implements OnInit{
     nbre: number = 0;
 
     formmodule!:FormGroup;
+    formmodule2!:FormGroup;
+
     file:any;
     fichier!:Fichier;
+    
   
 
   constructor(private serviceTirage: TirageService,private formB:FormBuilder) { }
@@ -42,6 +45,13 @@ ngOnInit(): void {
   this.formmodule=this.formB.group({
       libelle:["",Validators.required],
       file:["",Validators.required],
+    })
+
+    this.formmodule2=this.formB.group({
+      libelle:["",Validators.required],
+      file:["",Validators.required],
+      nombre:["",Validators.required],
+      libellet:["",Validators.required],
     })
 
 }
@@ -69,6 +79,8 @@ resetForm(){
 
 }
 
+
+
 postTirage(){
 
   //on recupere la valeur actuelle dans le champ libelle tirage  dans le formulaire
@@ -84,6 +96,33 @@ postTirage(){
   this.resetForm();
 }
 
+
+
+postImportTrie(){ 
+
+
+  this.fichier=this.formmodule2.value
+
+   //on recupere la valeur actuelle dans le champ libelle tirage  dans le formulaire
+   this.tirageobjet.libellet = this.libellet; 
+
+   // on recupere le nombre à tirer actuelle dans le formulaire
+  this.tirageobjet.nbre = this.nbre;
+
+   // on renvoie l'objet tirage et parametre libelle liste à la methode declaré dans la service et qui est chargée de poster les donnée
+  //  this.serviceTirage.postImportTrie(this.file,this.libelleListe,this.tirage).subscribe()
+  console.log(this.fichier.libelle)
+  
+ 
+  this.serviceTirage.postImportTrie(this.fichier.libelle,this.file,this.fichier).subscribe(data=>{
+
+    console.log(data)
+  
+    this.formmodule.reset()
+    })
+
+    this.resetForm();
+} 
 
 
   tirage: boolean = true;

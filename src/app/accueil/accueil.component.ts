@@ -19,6 +19,9 @@ export class AccueilComponent implements OnInit{
   nombreTirage: any;
   nombreListeTiree: any;
 
+  
+  tiraget:any;
+
 
   text_accueil!: string;
   libelle_liste!: string;

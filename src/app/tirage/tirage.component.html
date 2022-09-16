@@ -44,7 +44,7 @@
 
             <div>
                 <label for="liste">Libelle Liste </label>
-                <input type="text" name="libelle" formControlName="libelle"placeholder="" id="liste"/>
+                <input type="text" [(ngModel)]="libelleListe" name="libelle" formControlName="libelle" placeholder="" id="liste"/>
             </div>
 
             <div class="fichier"> <!--*ngIf="!show"-->
@@ -65,31 +65,31 @@
     <div *ngIf="tirage_import"  class="ImportTirage">
         <div class="FormTrie1">Importer et tirer</div>
         <div class="form-saisie2">
-            <form method="" action="">
+          <form [formGroup]="formmodule2" (ngSubmit)="postImportTrie()">
     
                 <div>
                     <label for="liste">Libelle Liste </label>
-                    <input type="text" name="liste" placeholder="" id="liste"/>
+                    <input type="text" [(ngModel)]="libelleListe" name="liste" placeholder="" formControlName="libelle" id="liste"/>
                 </div>
     
                 <div class="fichier"> <!--*ngIf="!show"-->
                     <label for="file">Fichier excel</label>
-                    <input class="form-control" type="file" id="formFileDisabled" name="file"id="file">
+                    <input class="form-control" type="file" id="formFileDisabled" formControlName="file" name="file" id="file" (change)="fileChange($event)" >
                 </div>
     
                 <div><!-- *ngIf="show"-->
                     <label for="nombre">Nombre de personne trier </label>
-                    <input type="number" name="nombre" placeholder="" id="nombre" />
+                    <input type="number" [(ngModel)]="nbre" name="nombre" formControlName="nombre" placeholder="" id="nombre" />
                 </div>
     
     
                 <div><!-- *ngIf="show"-->
                     <label for="tirage">Libelle Tirage </label>
-                    <input type="text" name="tirage" placeholder="" id="tirage"/>
+                    <input type="text" [(ngModel)]="libellet" name="tirage" formControlName="libellet" placeholder="" id="tirage"/>
             
                 </div>
                 <div>
-                    <input type="submit" name="" value="Tirer" class="btntrier btn btn-primary" />
+                    <input type="submit"   name="submitBtn" value="Tirer" class="btntrier btn btn-primary" />
                 </div>
     
             </form>
