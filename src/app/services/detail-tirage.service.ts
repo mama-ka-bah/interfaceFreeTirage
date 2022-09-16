@@ -18,4 +18,15 @@ export class DetailTirageService {
   getAllTirages() : Observable<object>{
     return this.http.get<object>("http://localhost:8080/tirage/recupererTirages");
   }
+
+
+  getTirage(id_tirage: number) : Observable<object>{
+
+    return this.http.get<object>(`http://localhost:8080/tirage/recupererTirageParId/${id_tirage}`);
+
+  }
+
+  getPostulantTireParTirage(libelle: string): Observable<Object>{
+    return this.http.get(`http://localhost:8080/PostulantTrie/recuperationParLibelle/${libelle}`)
+  }
 }

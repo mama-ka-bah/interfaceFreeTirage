@@ -44,7 +44,6 @@ nav{
 .menu li a{
     text-decoration: none;
     color: black;
-
 }
 
 .accueil{
@@ -67,10 +66,17 @@ footer{
     font-size: 20px;
 }
 
+.boutton_nav{
+    display: none;
+}
+ .fa-times{
+    display: none;
+ }
 
+
+/*
 @media screen and (max-width: 450px)
 {
-    /* Rédigez vos propriétés CSS ici  */
     
     .menu{         
        display: block;
@@ -94,9 +100,7 @@ footer{
 
     nav{
         flex-direction: column;
-        /*justify-content: space-between;*/
         width: 150px;
-        /*height: 100vh;*/
         align-items: center;
         position: fixed;
         bottom: 0;
@@ -106,18 +110,101 @@ footer{
     .accueil{
         margin-bottom: 50px;
     }
-/*
-    .content_footer{
-        width: 100%;
-        font-size: 16px;
-    }
 
-
-    footer{
-        font-size: 6px;
-    }
-    */
     footer{
         display: none;
     }
+}
+*/
+
+@media screen and (max-width: 450px){
+
+    .menu{         
+        display: block;
+        padding: auto;
+        margin: auto;
+     }
+     .logo{
+         margin-top: 30px;
+         margin-left: auto;
+         margin-right: auto;
+         height: 100px;
+     }
+     .company{
+         
+         flex-direction: column;
+     }
+     .name_company{
+         margin-top: 30px;
+         margin-bottom: 30px;
+     }
+ 
+   /*
+     nav{
+         flex-direction: column;
+         width: 150px;
+         align-items: center;
+         position: fixed;
+         bottom: 0;
+         top: 0;
+         display: none;
+     }
+     */
+    
+  
+     .mobile{
+        flex-direction: column;
+        width: 150px;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        display: none;
+    }
+     
+ 
+     .accueil{
+         margin-bottom: 50px;
+     }
+ 
+    .fa{
+        font-size: 80px;
+    }
+
+    .boutton_nav{
+        display: block;
+        position: fixed;
+        color: #59B05D;
+        top: 0;
+        z-index: 1;
+        background-color: #FFF;
+        width: 100%;
+        margin-bottom: 400px;
+    }
+
+    .fa-times{
+        display: block;
+        color:red;
+        font-size: 50px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+     }
+
+     footer{
+        display: none;
+     }
+
+     nav{
+        position: fixed;
+        top: 0;
+        background-color: white;
+     }
+
+     .menu li a{
+        font-size: 20px;
+     }
+    
+    
+
 }

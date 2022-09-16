@@ -1,14 +1,16 @@
-<div class="content_detail_liste">
-    <p class="libelle" >Libellé liste kalanso p2</p>
-   <p class="libelle">12/03/2019</p>
+<div class="content_detail_liste" >
+    <p class="libelle" >{{libelle}}</p>
+   <p class="libelle">{{date | date}}</p>
 </div>
 
 <div class="tableau">
+  <label class="libSearch">Rechercher</label>
+  <input type="text" name="motCle" id="motCle" placeholder="Recherche liste" [(ngModel)]="searchText" class="search">
     <table class="table caption-top">
         <caption></caption>
         <thead>
           <tr>
-            <th scope="col">Numero</th>
+            <th scope="col" class="num">Numero</th>
             <th scope="col">Libellés tirages</th>
             <th scope="col">Date</th>
             <th scope="col">Nombre Postulant</th>
@@ -16,6 +18,7 @@
           </tr>
         </thead>
         <tbody *ngIf=" detailslistes$ | async as index">
+          
           <!--
                <tr>
             <th scope="row">1</th>
@@ -26,12 +29,13 @@
           </tr>
           -->
 
-          <tr *ngFor="let tirage of detailslistes$ | async; index as i"><!--<tr *ngFor="let tirage of tirages$ | async; index as i">-->
-            <th scope="row">{{i+1}}</th>
+          <tr *ngFor="let tirage of detailslistes$ | async | filter:searchText  | paginate: {itemsPerPage:4,currentPage: p}; index as i"><!--<tr *ngFor="let tirage of tirages$ | async; index as i">-->
+            <th scope="row" class="num">{{i+1}}</th>
             <td class="lie" [routerLink]="['/detailtirage', tirage.id]" routerLinkActive="active" style="cursor: default;">{{tirage.libellet}}</td>
-            <td>{{tirage.date}}</td>
+            <td>{{tirage.date | date}}</td>
             <td>{{tirage.nbre}}</td>
-            <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
+            <td class="details" [routerLink]="['/detailtirage', tirage.id]"><i class="fa fa-info-circle" aria-hidden="true"></i>
+            </td>
           </tr>
 
 
@@ -54,4 +58,5 @@
          
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

@@ -29,11 +29,22 @@ td i{
 }
 
 @media screen and (max-width: 700px){
-    .email{
+    .email, .num{
         display: none;
     }
 }
 
+
+@media screen and (max-width: 450px) {
+
+    .content_detail_liste p{
+       margin-top: 50px;
+       font-size: 18px;
+    }
+    
+}
+
+/*
 @media screen and (max-width: 450px){
 
     .content_detail_liste{
@@ -69,4 +80,5 @@ td i{
     }
 
 }
+*/
 

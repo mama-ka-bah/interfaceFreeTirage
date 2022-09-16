@@ -21,6 +21,8 @@ export class AccueilComponent implements OnInit{
 
   
   tiraget:any;
+  searchText:any;
+  p:any;
 
 
   text_accueil!: string;
