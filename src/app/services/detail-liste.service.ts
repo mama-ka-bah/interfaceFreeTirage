@@ -15,4 +15,11 @@ export class DetailListeService {
 
   }
 
+  getListe(id_liste: number) : Observable<object>{
+
+    return this.http.get<object>(`http://localhost:8080/Liste/listeDonnee/${id_liste}`);
+
+  }
+
+
 }

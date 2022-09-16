@@ -1,9 +1,11 @@
 <div class="content_detail_liste">
-    <p class="libelle" >Libellé liste kalanso p2</p>
-   <p class="libelle">12/03/2019</p>
+    <p class="libelle" >{{libellTirage}}</p>
+   <p class="libelle">{{date | date}}</p>
 </div>
 
 <div class="tableau">
+  <label class="libSearch">Rechercher</label>
+  <input type="text" name="motCle" id="motCle" placeholder="Recherche liste" [(ngModel)]="searchText" class="search">
     <table class="table caption-top">
         <caption></caption>
         <thead>
@@ -17,31 +19,15 @@
         </thead>
         <tbody *ngIf="detailTirage$ | async as index">
           <!-- *ngFor="let postulantTires of detailTirage$ | async; index as i" -->
-          <tr *ngFor="let tirage of detailTirage$ | async; index as i" > <!--<tr *ngFor="let postulantTires of listePostulanttirage" >-->
+          <tr *ngFor="let tirage of detailTirage$ | async | filter:searchText  | paginate: {itemsPerPage:4,currentPage: p}; index as i" > <!--<tr *ngFor="let postulantTires of listePostulanttirage" >-->
             <th scope="row" class="num">{{i+1}}</th>
-            <td routerLink="/detailtirage" routerLinkActive="active" >{{i+1}}.{{tirage.nompostulant}}</td>
+            <td routerLink="/detailtirage" routerLinkActive="active" >{{tirage.nompostulant}}</td>
             <td>{{tirage.prenompostulant}}</td><!-- {{i+1}}.{{postulantTires.prenompostulant}} -->
             <td>{{tirage.numeropostulant}}</td>
             <td class="email" >{{tirage.email}}</td>
           </tr>
-          <!--
-              <tr>
-              <th scope="row" class="num">1</th>
-              <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
-              <td>Mahamadou</td>
-              <td>82644606</td>
-              <td class="email" >kmahamadou858@gmail.com</td>
-            </tr>
-
-            <tr>
-              <th scope="row" class="num">1</th>
-              <td routerLink="/detailtirage" routerLinkActive="active" >Keita</td>
-              <td>Mahamadou</td>
-              <td>82644606</td>
-              <td class="email" >kmahamadou858@gmail.com</td>
-            </tr>
-          -->
           
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

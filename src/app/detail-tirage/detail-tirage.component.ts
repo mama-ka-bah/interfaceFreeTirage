@@ -15,6 +15,13 @@ export class DetailTirageComponent implements OnInit {
 
   detailTirage$!: Observable<any>;
 
+  libellTirage:any;
+  date:any;
+  tirage:any;
+
+  searchText:any;
+  p:any;
+
 
 
   constructor(private service : DetailTirageService,
@@ -30,9 +37,19 @@ export class DetailTirageComponent implements OnInit {
    const tirageid = +this.route.snapshot.params["id"];
 
    this.detailTirage$ = this.service.getListePostulanttirageByNomTirage(tirageid);
+
+   this.service.getTirage(tirageid).subscribe(data=>{
+
+    this.tirage=data;
+    this.libellTirage = this.tirage.libellet;
+    this.date = this.tirage.date;
+
+  })
+
+
+
   }
 
   
- 
 
 }

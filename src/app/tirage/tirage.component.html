@@ -10,11 +10,27 @@
       <div class="FormTrie1">Effetuer un tirage</div>
       <div class="form-saisie2">
           <form > <!--  #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)" -->
+
+            <div>
+              <label for="libelle_liste">Libelle Liste </label>
+              <select [(ngModel)]="libelleListe" name="libelle" class="form-control" id="libelle_liste">
+                <option *ngFor="let liste of listes$ | async" class="form-control" [ngValue]="liste.libelle">
+                  {{liste.libelle}}
+                </option>
   
-              <div>
-                  <label for="libelle_liste">Libelle Liste </label>
-                  <input type="text" [(ngModel)]="libelleListe" name="libelleListe" placeholder="" id="libelle_liste"/>
-              </div>
+              </select>
+            </div>
+
+
+              <!--
+
+                <div>
+                              <label for="libelle_liste">Libelle Liste </label>
+                              <input type="text" [(ngModel)]="libelleListe" name="libelleListe" placeholder="" id="libelle_liste"/>
+                          </div>
+
+              -->
+             
   
               <div><!-- *ngIf="show"-->
                   <label for="nbre">Nombre de personne trier </label>
@@ -42,10 +58,12 @@
     <div class="form-saisie2">
         <form [formGroup]="formmodule" (ngSubmit)="importerliste()">
 
-            <div>
+
+                 <div>
                 <label for="liste">Libelle Liste </label>
                 <input type="text" name="libelle" formControlName="libelle"placeholder="" id="liste"/>
             </div>
+          
 
             <div class="fichier"> <!--*ngIf="!show"-->
                 <label for="file">Fichier excel</label>
@@ -186,6 +204,7 @@
 </div>
 
 
+
     <div *ngIf="tirage" class="liste_postulant-tires">
           <div class="listet">
               <p >Liste tirée</p>
@@ -204,7 +223,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                   <!-- <tr>
                       <th scope="row" class="num">1</th>
                       <td>Mahamadou</td>
                       <td>Keita</td>
@@ -224,12 +243,21 @@
                       <td>Keita</td>
                       <td>82644606</td>
                       <td class="email">kmahamadou858@gmail.com</td>
+                    </tr>-->
+                    <tr *ngFor="let postulant of listeTires$ |async | filter:searchText | paginate: {itemsPerPage:4,currentPage: p}; index as i">
+                      <th scope="row" class="num">{{i+1}}</th>
+                      <td>{{postulant.nompostulant}}</td>
+                      <td>{{postulant.prenompostulant}}</td>
+                      <td>{{postulant.numeropostulant}}</td>
+                      <td class="email">{{postulant.email}}</td>
                     </tr>
                   </tbody>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </table>
           </div>
 
     </div>
+
 
 <div *ngIf="import" class="liste_postulant-tires">
     <div class="listet">

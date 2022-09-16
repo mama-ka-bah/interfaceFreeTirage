@@ -15,23 +15,27 @@
         </div>
     </div>
 <div class="tableau">
+  <label class="libSearch">Rechercher</label>
+  <input type="text" name="motCle" id="motCle" placeholder="Recherche liste" [(ngModel)]="searchText" class="search">
     <table class="table caption-top">
         <caption></caption>
         <thead>
           <tr>
-            <th scope="col">Numero</th>
+            <th class="num" scope="col">Numero</th>
             <th scope="col">Liste postulants</th>
             <th scope="col">Nombre tirages</th>
             <th scope="col">Details</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let liste of listes$ | async; index as i">
-            <th scope="row">{{i+1}}</th>
+          <tr *ngFor="let liste of listes$ | async |filter:searchText  | paginate: {itemsPerPage:4,currentPage: p} ; index as i ">
+            <th class="num" scope="row">{{i+1}}</th>
             <td class="lit" [routerLink]="['/detailsliste', liste.id_liste]" routerLinkActive="active" style="cursor: default;">{{liste.libelle}}</td>
             <td>{{liste.nbre_tirage}}</td>
-            <td class="details" ><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td>
+            <td class="details"  [routerLink]="['/detailsliste', liste.id_liste]" ><i class="fa fa-info-circle" aria-hidden="true"></i>
+            </td>
           </tr>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
     <!--
           <tr>

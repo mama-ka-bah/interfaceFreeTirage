@@ -14,6 +14,15 @@ export class AppComponent implements OnInit{
   tirage!: string;
   contents_footer!: string;
 
+  active_barre: boolean = false;
+  active_trait:boolean = true;
+  active_burreau:boolean = true;
+
+
+  aficheMenu(): void{
+   
+
+  }
 
   ngOnInit(): void {
     this.name_company = "FreeTirage";
@@ -24,5 +33,14 @@ export class AppComponent implements OnInit{
     this.accueil = "Accueil";
     this.tirage = "Tirage";
 
+  }
+
+  mobile(){
+    this.active_barre = true;
+    this.active_trait = false;
+  }
+  mobile1(){
+    this.active_barre = false;
+    this.active_trait = true;
   }
 }

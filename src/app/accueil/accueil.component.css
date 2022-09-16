@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     /*margin-top: -30px;*/
-    margin-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .statistique_liste_tire, .statistique_tirage{
@@ -49,6 +49,10 @@ th{
 }
 
 .total_liste_tire, .total_tirage{
+    font-size: 40px;
+}
+
+.total_liste_tire, .total_tirage{
   margin-top: -100px
 }
 
@@ -58,6 +62,7 @@ td i{
     font-size: 30px;
     color: #5AB05D;
 }
+
 
 @media screen and (max-width: 800px){
     .statistiques{
@@ -70,6 +75,7 @@ td i{
     }
 }
 
+/*
 @media screen and (max-width: 450px){
 
     .texte_accueil{
@@ -112,17 +118,14 @@ td i{
 
 }
 
-
-/*
-.libelle_total_liste_tire, .libelle_total_tirage{
-    
-}
-
-.content_statistique_liste_tire, .content_statistique_tirage{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
 */
 
+@media screen and (max-width: 450px){
+    .texte_accueil{
+        margin-top: 100px;
+    }
+
+    .num{
+        display: none;
+    }
+}
