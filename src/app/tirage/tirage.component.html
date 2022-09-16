@@ -10,8 +10,6 @@
       <div class="FormTrie1">Effetuer un tirage</div>
       <div class="form-saisie2">
           <form > <!--  #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)" -->
-
-            <div>
               <label for="libelle_liste">Libelle Liste </label>
               <select [(ngModel)]="libelleListe" name="libelle" class="form-control" id="libelle_liste">
                 <option *ngFor="let liste of listes$ | async" class="form-control" [ngValue]="liste.libelle">
@@ -49,6 +47,7 @@
           
   
           </form>
+          
       </div>
   </div>
 
