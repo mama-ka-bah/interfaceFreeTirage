@@ -134,4 +134,10 @@ td i{
         width: 250px;
         height: 250px;
     }
+
+
+    .libelle_total_liste_tire{
+        text-align: center;
+        margin-bottom: 35px;
+    }
 }

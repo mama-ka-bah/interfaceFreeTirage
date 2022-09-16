@@ -10,7 +10,7 @@
         <caption></caption>
         <thead>
           <tr>
-            <th scope="col">Numero</th>
+            <th scope="col" class="num">Numero</th>
             <th scope="col">Libellés tirages</th>
             <th scope="col">Date</th>
             <th scope="col">Nombre Postulant</th>
@@ -30,7 +30,7 @@
           -->
 
           <tr *ngFor="let tirage of detailslistes$ | async | filter:searchText  | paginate: {itemsPerPage:4,currentPage: p}; index as i"><!--<tr *ngFor="let tirage of tirages$ | async; index as i">-->
-            <th scope="row">{{i+1}}</th>
+            <th scope="row" class="num">{{i+1}}</th>
             <td class="lie" [routerLink]="['/detailtirage', tirage.id]" routerLinkActive="active" style="cursor: default;">{{tirage.libellet}}</td>
             <td>{{tirage.date | date}}</td>
             <td>{{tirage.nbre}}</td>
