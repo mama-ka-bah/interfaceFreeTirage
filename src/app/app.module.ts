@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +39,8 @@ import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LayoutModule
     
     
   ],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,13 @@ export class AppComponent implements OnInit{
 
   }
 
+  actualise():void{
+    setInterval(()=>{
+    }, 1000, clearInterval(1500));
+  }
+
+  constructor(public breakpointObserver: BreakpointObserver) {}
+
   ngOnInit(): void {
     this.name_company = "FreeTirage";
     this.logo_company = "../../assets/logo.jpeg";
@@ -32,6 +40,20 @@ export class AppComponent implements OnInit{
     this.descp_logo = "logo_free_tirage";
     this.accueil = "Accueil";
     this.tirage = "Tirage";
+
+
+
+    this.breakpointObserver
+      .observe(['(max-width: 450px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.active_burreau = false;
+          this.actualise();
+        } else {
+          this.active_burreau = true;
+          this.actualise();
+        }
+      });
 
   }
 

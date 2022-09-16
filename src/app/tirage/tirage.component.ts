@@ -106,7 +106,7 @@ postTirage(){
 
 //
 actualise(l: string):void{
-  setInterval(()=>{
+  setTimeout(()=>{
     this.getPOstulantTireParTirage(l);
   }, 1000, clearInterval(1500));
 }
@@ -150,7 +150,4 @@ getPOstulantTireParTirage(libellel: string){
 
     this.tirage = false;
   }
-
-  
-
 }
