@@ -42,14 +42,7 @@ export class TirageService {
     }
 
     data.append("file",file)
-    //let data1 =new FormData()
-    //console.log(this.tir)
-
-    //data.append("tirage",this.tir)
-
-    //data.append("libellet",tirage.libellet)
-    //data.append("nbre",tirage.nombre)
-    // console.log(tirage.nombre)
+   
 
     return this.http.post<void>(`http://localhost:8080/importTrie/import/excel/${libelle}/${tirage.libellet}/${tirage.nombre}`,data);
   }
