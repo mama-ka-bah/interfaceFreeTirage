@@ -34,8 +34,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.name_company = "FreeTirage";
-    this.logo_company = "../../assets/logo.jpeg";
-    this.contents_footer = "CopyRigth 2022 FreeTirage/bamako-Mali";
+    this.logo_company = "../../assets/logo.jpg";
+    this.contents_footer = "Droits d'Auteur 2022 FreeTirage/bamako-Mali";
     this.title = "interfaceFreeTirage";
     this.descp_logo = "logo_free_tirage";
     this.accueil = "Accueil";
